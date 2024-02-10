@@ -28,7 +28,7 @@ Backup_photos_VK - это инструмент для загрузки фото�
 
 ## Автор
 
-[Vento741](https://github.com/Vento741/Backup_photos_VK)
+[Vento741](https://github.com/Vento741)
 
 ## Лицензия
 
