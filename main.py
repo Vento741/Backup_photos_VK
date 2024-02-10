@@ -87,8 +87,10 @@ def main():
     if not album_id:
         album_id = 'profile'
 
+    # Запрашиваем количество фотографий
+    count = int(input("Введите количество фотографий (по умолчанию 5): ") or 5)
     # Получаем информацию о фотографиях
-    vk_photos = get_vk_photos(user_id, tokens.get('access_token'), count=5, album_id=album_id)
+    vk_photos = get_vk_photos(user_id, tokens.get('access_token'), count=count, album_id=album_id)
 
     # Пытаемся прочитать текущий JSON файл, если он существует
     try:
@@ -117,6 +119,7 @@ def main():
     folder = 'vk_photos'
     for photo in tqdm(vk_photos, desc='Uploading photos', unit='photo'):
         upload_to_yandex_disk(yandex_token, folder, photo['file_name'], photo['url'])
+
 
 if __name__ == "__main__":
     main()
